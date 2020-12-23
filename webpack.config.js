@@ -1,4 +1,5 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: {
@@ -8,6 +9,12 @@ module.exports = {
     path: path.join(__dirname, 'public', 'dist'),
     filename: '[name].js'
   },
+  plugins: [
+    new Dotenv({
+      path: './.env.local',
+      defaults: './.env',
+    })
+  ],
   module: {
     rules: [
       {

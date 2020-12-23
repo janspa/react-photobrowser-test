@@ -1,3 +1,12 @@
+/** vars **/
+
+:root {
+  --bg-color: #242930;
+  --text-color: #f8f9fa;
+  --text-muted-color: #8f90a5;
+  --border-color: #5a5d70;
+}
+
 /** normalizers **/
 
 html {
@@ -11,11 +20,11 @@ select {
   font-family: Arial Regular, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #262626;
+  color: var(--text-color);
 }
 
 body {
-  background-color: #f8f9fa;
+  background-color: var(--bg-color);
   margin: 0;
 }
 
@@ -25,8 +34,15 @@ body {
 
 /** utility classes (Bootstrap-esque) **/
 
+.position-relative {
+  position: relative;
+}
+.position-absolute {
+  position: absolute;
+}
+
 .small {
-  font-size: 10pt;
+  font-size: 9pt;
 }
 .h1 {
   font-size: 26pt;
@@ -42,7 +58,7 @@ body {
 }
 
 .muted {
-  color: #70757a;
+  color: var(--text-muted-color);
 }
 
 .text-center {
@@ -55,20 +71,27 @@ body {
   text-align: right;
 }
 
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
 .border {
-  border: 2px solid #e6e6e6;
+  border: 2px solid var(--border-color);
 }
 .border-top {
-  border-top: 2px solid #e6e6e6;
+  border-top: 2px solid var(--border-color);
 }
 .border-right {
-  border-right: 2px solid #e6e6e6;
+  border-right: 2px solid var(--border-color);
 }
 .border-bottom {
-  border-bottom: 2px solid #e6e6e6;
+  border-bottom: 2px solid var(--border-color);
 }
 .border-left {
-  border-left: 2px solid #e6e6e6;
+  border-left: 2px solid var(--border-color);
 }
 .rounded {
   border-radius: 0.5em;
@@ -93,6 +116,14 @@ body {
 .row {
   display: flex;
 }
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .col {
   flex-basis: 0;
   flex-grow: 1;
@@ -108,6 +139,31 @@ body {
 }
 .mw-100 {
   max-width: 100%;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.align-items-end {
+  align-items: flex-end !important;
+}
+.justify-content-start {
+  justify-content: flex-start !important;
+}
+.justify-content-center {
+  justify-content: center !important;
+}
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+.justify-content-around {
+  justify-content: space-around !important;
+}
+.justify-content-between {
+  justify-content: space-between !important;
 }
 
 .p-0 { padding: 0 !important; }

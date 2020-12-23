@@ -1,0 +1,16 @@
+.PhotoGridItem {
+  max-width: 150px;
+}
+
+.PhotoGridItem-thumbnail {
+  max-height: 150px;
+  max-width: 150px;
+  object-fit: scale-down;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.PhotoGridItem-thumbnail:hover {
+  opacity: 1;
+}
