@@ -3,9 +3,9 @@ import './PhotoGridItem.css'
 
 export default function PhotoGridItem({ photo }) {
   return (
-    <div className="PhotoGridItem col p-1">
-      <img className="PhotoGridItem-thumbnail w-100" src={photo.thumbnailUrl} />
-      <div className="small muted text-truncate">
+    <div className="PhotoGridItem col mb-1 text-center">
+      <img className="PhotoGridItem-thumbnail px-1" src={photo.thumbnailUrl} />
+      <div className="small muted text-truncate px-1">
         <em>{photo.title}</em>
       </div>
     </div>

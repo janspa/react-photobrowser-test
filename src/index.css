@@ -2,12 +2,23 @@
 
 :root {
   --bg-color: #242930;
+  --input-bg-color: #14181f;
+  --button-bg-color: #3a4352;
+  --button-bg-hover-color: #637696;
+  --button-bg-disabled-color: #555a63;
+  --button-primary-bg-color: #487192;
+  --button-primary-bg-hover-color: #699bc4;
   --text-color: #f8f9fa;
   --text-muted-color: #8f90a5;
   --border-color: #5a5d70;
+  --button-border-color: #181b20;
 }
 
 /** normalizers **/
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   line-height: 1.15;
@@ -15,7 +26,8 @@ html {
 }
 
 body,
-select {
+select,
+.btn {
   font-size: 13pt;
   font-family: Arial Regular, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,15 +36,47 @@ select {
 }
 
 body {
-  background-color: var(--bg-color);
   margin: 0;
+  background-color: var(--bg-color);
 }
 
-* {
-  box-sizing: border-box;
+select {
+  background-color: var(--input-bg-color);
+  padding: 0.25rem 0.4rem;
+  border-color: var(--border-color);
+  border-radius: 0.35em;
 }
 
 /** utility classes (Bootstrap-esque) **/
+
+.btn {
+  background-color: var(--button-bg-color);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--button-border-color);
+  border-radius: 0.35em;
+  line-height: 1rem;
+  min-height: 2rem;
+  cursor: pointer;
+  outline: 0;
+}
+
+.btn:hover {
+  background-color: var(--button-bg-hover-color);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  color: var(--text-muted-color);
+  background-color: var(--button-bg-disabled-color);
+}
+
+.btn-primary {
+  background-color: var(--button-primary-bg-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--button-primary-bg-hover-color);
+}
 
 .position-relative {
   position: relative;

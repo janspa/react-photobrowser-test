@@ -16,18 +16,17 @@ const fetchPhotoById = createAsyncThunk('photos/fetchPhotoById',
 const photosSlice = createSlice({
   name: 'photos',
   initialState: {
-    entities: new Map(),
+    entities: {},
   },
   reducers: {
 
   },
   extraReducers: {
     [fetchPhotos.fulfilled]: (state, action) => {
-      state.entities = new Map(action.payload.map(p => [p.id, p]))
-      console.log(state.entities)
+      state.entities = action.payload.reduce((obj, p) => { obj[p.id] = p; return obj }, {})
     },
     [fetchPhotoById.fulfilled]: (state, action) => {
-      state.entities.set(action.payload.id, action.payload)
+      state.entities[action.payload.id] = action.payload
     },
   }
 })

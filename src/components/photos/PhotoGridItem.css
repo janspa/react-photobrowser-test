@@ -1,9 +1,9 @@
 .PhotoGridItem {
-  max-width: 150px !important;
+  width: 150px;
 }
 
 .PhotoGridItem-thumbnail {
-  max-height: 150px;
+  height: 150px;
   max-width: 150px;
   object-fit: scale-down;
   cursor: pointer;
