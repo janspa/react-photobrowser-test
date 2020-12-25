@@ -1,5 +1,5 @@
 .PhotoGridItem {
-  max-width: 150px;
+  max-width: 150px !important;
 }
 
 .PhotoGridItem-thumbnail {

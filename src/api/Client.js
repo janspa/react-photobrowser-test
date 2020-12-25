@@ -1,4 +1,4 @@
-export default class APIClient {
+export default class Client {
   static async get(endpoint) {
     const res = await fetch(process.env.API_URL + endpoint)
     if (!res.ok) {
