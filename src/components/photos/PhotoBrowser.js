@@ -25,7 +25,11 @@ export default function PhotoBrowser() {
   }, [])
 
   const handleLimitInput = evt => {
-    setLimit(Number.parseInt(evt.target.value))
+    const newLimit = Number.parseInt(evt.target.value)
+    if (limit !== newLimit) {
+      setLimit(newLimit)
+      handlePageChange(Math.ceil((offset + 1) / newLimit))
+    }
   }
 
   const handlePageChange = value => {
