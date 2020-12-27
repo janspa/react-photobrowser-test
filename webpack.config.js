@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'build'),
-    filename: '[name].js'
+    filename: '[name].[contenthash].js'
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -32,6 +32,19 @@ module.exports = {
 
     }),
   ],
+  optimization: {
+    moduleIds: 'deterministic',
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {
