@@ -1,4 +1,7 @@
 const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
@@ -6,14 +9,28 @@ module.exports = {
     bundle: ['./src/index.js'],
   },
   output: {
-    path: path.join(__dirname, 'public', 'dist'),
+    path: path.join(__dirname, 'build'),
     filename: '[name].js'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new Dotenv({
       path: './.env.local',
       defaults: './.env',
-    })
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve('./public/index.html'),
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'public', to: '.', globOptions: {
+            ignore: ['index.html'],
+          },
+        },
+      ],
+
+    }),
   ],
   module: {
     rules: [
@@ -40,7 +57,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public/'),
     port: 3000,
-    publicPath: 'http://localhost:3000/dist',
+    publicPath: 'http://localhost:3000/',
     hot: true,
   },
 };
