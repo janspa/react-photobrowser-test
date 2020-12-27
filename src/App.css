@@ -1,6 +1,8 @@
 .App {
   padding: 0 1rem;
   max-width: 800px;
+  min-height: 100vh;
+  background: var(--app-bg-color);
 }
 
 .App-header {

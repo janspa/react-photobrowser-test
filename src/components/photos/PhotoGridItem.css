@@ -4,6 +4,7 @@
 
 .PhotoGridItem-thumbnail {
   height: 150px;
+  min-height: 150px;
   max-width: 150px;
   object-fit: scale-down;
   cursor: pointer;

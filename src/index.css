@@ -2,14 +2,17 @@
 
 :root {
   --bg-color: #242930;
+  --app-bg-color: #30353d;
   --input-bg-color: #14181f;
   --button-bg-color: #3a4352;
   --button-bg-hover-color: #637696;
   --button-bg-disabled-color: #555a63;
-  --button-primary-bg-color: #487192;
-  --button-primary-bg-hover-color: #699bc4;
+  --button-primary-bg-color: #335d80;
+  --button-primary-bg-hover-color: #4083b9;
   --text-color: #f8f9fa;
   --text-muted-color: #8f90a5;
+  --link-color: #c6e4ff;
+  --link-hover-color: #76b8f5;
   --border-color: #5a5d70;
   --button-border-color: #181b20;
 }
@@ -45,6 +48,14 @@ select {
   padding: 0.25rem 0.4rem;
   border-color: var(--border-color);
   border-radius: 0.35em;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover-color);
 }
 
 /** utility classes (Bootstrap-esque) **/

@@ -1,0 +1,8 @@
+.PhotoDetails-photo {
+  flex-basis: 65% !important;
+  flex-grow: 0 !important;
+}
+
+.PhotoDetails-photo > img {
+  width: 100%;
+}

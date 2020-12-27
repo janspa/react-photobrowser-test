@@ -1,5 +1,5 @@
 {
-  "short_name": "React Photo Browser",
+  "short_name": "Photo Browser",
   "name": "React Photo Browser",
   "icons": [
     {
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#f8f9fa",
+  "background_color": "#242930"
 }

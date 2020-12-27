@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Pagination from '../utils/Pagination'
 import PhotoGrid from './PhotoGrid'
@@ -6,11 +7,13 @@ import { fetchPhotos } from './photosSlice'
 
 export default function PhotoBrowser() {
   const dispatch = useDispatch()
+  const history = useHistory()
   const topEl = useRef(null)
+  let { page } = useParams()
+  page = (!Number.isNaN(page) && page > 0) ? Number.parseInt(page) : 1
 
   const limitValues = [10, 20, 50, 100]
   const [limit, setLimit] = useState(20)
-  const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
   const photos = useSelector(state => Object.values(state.photos.entities))
   const offset = (page - 1) * limit
@@ -24,8 +27,9 @@ export default function PhotoBrowser() {
   const handleLimitInput = evt => {
     setLimit(Number.parseInt(evt.target.value))
   }
+
   const handlePageChange = value => {
-    setPage(Number.parseInt(value))
+    history.push(`/${value}`)
     topEl.current.scrollIntoView()
   }
 
@@ -51,7 +55,7 @@ export default function PhotoBrowser() {
         <PhotoGrid
           photos={photos.slice(offset, offset + limit)}
         />
-        <div className="text-center my-3">
+        <div className="text-center py-3">
           <Pagination
             page={page}
             limit={limit}
